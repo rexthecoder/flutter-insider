@@ -1,0 +1,11 @@
+.vscode/**
+.vscode-test/**
+test/**
+.gitignore
+jsconfig.json
+vsc-extension-quickstart.md
+.eslintrc.json
+README.dev.md
+package-lock.json
+images/black-book-red-ribbon-2_icon-icons.com_49300.png
+images/vue-logo.png
