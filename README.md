@@ -23,13 +23,15 @@ Supports flutter.io, pub.dev, bloc.dev and api.flutter
 - Don't support embaded videos due to Vs code webview issue
 
 ## Release Notes
+### 1.1.0
+- Better Readme
 ### 1.0.2
-- updated Readme
+- Fix the display name
 
 
 ### 1.0.1
 - Fix Demo gif preview
-- Fix the display name
+
 
 
 ### 1.0.0
