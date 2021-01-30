@@ -1,3 +1,19 @@
+/**  
+  Copyright [2021] [Rexford Asamoah]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
 Object.defineProperty(exports, '__esModule', {
   value: true,
 });
@@ -5,7 +21,7 @@ Object.defineProperty(exports, '__esModule', {
 const vscode = require('vscode'); // подключаем библиотеку vscode
 const customLinksObject = vscode.workspace.getConfiguration().Insider.links;
 
-// This is a view for the web interface
+// This is the view for the web interface
 const getWebviewContent = (uri) => {
   const html = `
     <!DOCTYPE html>
@@ -28,6 +44,7 @@ const getWebviewContent = (uri) => {
   return html;
 };
 
+// Getting the user language based on the  vs codee config
 const getLang = () => {
   const supportedLangs = ['ru', 'en', 'zh'];
   const configLang = vscode.workspace.getConfiguration().Insider.lang;
@@ -51,12 +68,15 @@ const getLang = () => {
   return 'en';
 };
 
+//linking up the prefer docs based on the user lanaguage::Default language is english(Incase of any fallback)  
 const getURIof = (item = '', lang = 'en') => {
   if (typeof customLinksObject[item] === 'string') {
     // console.log(customLinksObject[item]);
     return String(customLinksObject[item]);
   }
-
+ 
+  // List of all the docs links needed for the user to view it docs
+  // TODO: Swip all the link  based on the language
   const URIof = {
     Material: {
       en: 'https://api.flutter.dev/flutter/material/material-library.html',
