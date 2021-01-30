@@ -1,14 +1,14 @@
 {
     "name": "flutter-insider",
-    "displayName": "FlutterInsider",
-    "description": "Get Flutter inside your vs code",
-    "version": "1.0.0",
+    "displayName": "Flutter Insider",
+    "description": "Get Flutter documentation and more inside your vs code",
+    "version": "1.0.2",
     "publisher": "rexthedev",
     "author": {
         "name": "Rexford Asamoah"
     },
     "license": "MIT",
-    "icon": "images/flutter-insider.jpg",
+    "icon": "images/flutter-insider.png",
     "galleryBanner": {
         "color": "#54C5F8",
         "theme": "dark"
