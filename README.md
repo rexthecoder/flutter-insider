@@ -23,6 +23,10 @@ Supports flutter.io, pub.dev, bloc.dev and api.flutter
 - Don't support embaded videos due to Vs code webview issue
 
 ## Release Notes
+
+### 1.1.1
+- Added Flutter Fire
+- Fixed a few bugs
 ### 1.1.0
 - Better Readme
 ### 1.0.2

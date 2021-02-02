@@ -93,10 +93,10 @@ const getURIof = (item = '', lang = 'en') => {
       ru: 'https://api.flutter.dev/flutter/widgets/widgets-library.html',
       zh: 'https://api.flutter.dev/flutter/widgets/widgets-library.html',
     },
-    'Pub': {
-      en: 'https://pub.dev',
-      ru: 'https://pub.dev',
-      zh: 'https://pub.dev',
+    'FlutterFire': {
+      en: 'https://firebase.flutter.dev',
+      ru: 'https://firebase.flutter.dev',
+      zh: 'https://firebase.flutter.dev',
     },
     'Bloc': {
       en: 'https://bloclibrary.dev/#/',
@@ -113,7 +113,7 @@ const activate = (context) => {
   const openInsider = vscode.commands.registerCommand('extension.openInsider', () => {
     const customMenuItems = Object.getOwnPropertyNames(customLinksObject);
 
-    const defaultMenuItems = ['Material', 'Cupertino', 'Widget', 'Pub', 'Bloc']; // Defaultmenu
+    const defaultMenuItems = ['Material', 'Cupertino', 'Widget', 'FlutterFire', 'Bloc']; // Defaultmenu
     const menuItems = [].concat(defaultMenuItems, customMenuItems);
 
 

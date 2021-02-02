@@ -10,7 +10,10 @@
 ---
 ## [1.0.2] - 2021-30-1
 + Fix the display name
-
+---
 ## [1.1.0] - 2021-30-1
-- Better Readme
-
++ Better Readme
+---
+## [1.1.1] - 2021-2-2
++ Added Flutter Fire
++ Fixed a few bugs

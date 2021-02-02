@@ -2,7 +2,7 @@
     "name": "flutter-insider",
     "displayName": "Flutter Insider",
     "description": "Get Flutter documentation and more inside your vs code",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "publisher": "rexthedev",
     "author": {
         "name": "Rexford Asamoah"
