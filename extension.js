@@ -17,11 +17,14 @@ limitations under the License.
 Object.defineProperty(exports, '__esModule', {
   value: true,
 });
-// eslint-disable-next-line
-const vscode = require('vscode'); // подключаем библиотеку vscode
+
+
+//================================== eslint-disable-next-line ==================================================================
+
+const vscode = require('vscode'); // initializing vscode
 const customLinksObject = vscode.workspace.getConfiguration().Insider.links;
 
-// This is the view for the web interface
+//================================== This is the view for the web interface ======================================================
 const getWebviewContent = (uri) => {
   const html = `
     <!DOCTYPE html>
@@ -44,7 +47,7 @@ const getWebviewContent = (uri) => {
   return html;
 };
 
-// Getting the user language based on the  vs codee config
+//===================================== Getting the user language based on the  vs code config ============================================
 const getLang = () => {
   const supportedLangs = ['ru', 'en', 'zh'];
   const configLang = vscode.workspace.getConfiguration().Insider.lang;
@@ -57,7 +60,7 @@ const getLang = () => {
         ? 'zh'
         : null;
 
-  // console.log(interfaceLang);
+  // !!console.log(interfaceLang);
   if (configLang !== '') {
     return configLang;
   }
@@ -68,14 +71,16 @@ const getLang = () => {
   return 'en';
 };
 
-//linking up the prefer docs based on the user lanaguage::Default language is english(Incase of any fallback)  
+
+//========================== linking up the prefer docs based on the user lanaguage::Default language is english(Incase of any fallback) ============================ 
 const getURIof = (item = '', lang = 'en') => {
   if (typeof customLinksObject[item] === 'string') {
-    // console.log(customLinksObject[item]);
+    // !!console.log(customLinksObject[item]);
     return String(customLinksObject[item]);
   }
- 
-  // List of all the docs links needed for the user to view it docs
+
+
+//========================== List of all the docs links needed for the user to view it docs ================================
   // TODO: Swip all the link  based on the language
   const URIof = {
     Material: {
@@ -108,7 +113,7 @@ const getURIof = (item = '', lang = 'en') => {
 };
 
 
-//Activating the extension
+//=================================== Activating the extension =========================================
 const activate = (context) => {
   const openInsider = vscode.commands.registerCommand('extension.openInsider', () => {
     const customMenuItems = Object.getOwnPropertyNames(customLinksObject);
@@ -117,7 +122,7 @@ const activate = (context) => {
     const menuItems = [].concat(defaultMenuItems, customMenuItems);
 
 
-
+//================================== Getting the picked menu item to be displayed inside webview ======================================
     vscode.window.showQuickPick(menuItems).then((selectedMenuItem) => {
       if (selectedMenuItem) {
 
@@ -126,12 +131,7 @@ const activate = (context) => {
           selectedMenuItem,
           vscode.ViewColumn.One,
           {
-
-            // https://code.visualstudio.com/docs/extensions/webview#_scripts-and-message-passing
             enableScripts: true,
-
-
-            // https://code.visualstudio.com/docs/extensions/webview#_persistence
             retainContextWhenHidden: true,
           }
         );
@@ -147,4 +147,5 @@ const activate = (context) => {
   context.subscriptions.push(openInsider);
 };
 
+//========================================= Where the magic booms ====================================
 exports.activate = activate;
