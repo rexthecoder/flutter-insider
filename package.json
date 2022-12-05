@@ -37,7 +37,7 @@
         "onCommand:extension.openInsider",
         "onCommand:extension.search"
     ],
-    "main": "./src/extension.js",
+    "main": "./out/main.js",
     "contributes": {
         "configuration": {
             "type": "object",

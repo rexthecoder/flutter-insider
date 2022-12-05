@@ -13,4 +13,5 @@ src/**
 **/tsconfig.json
 **/.eslintrc.json
 **/*.map
+**/*.js
 **/*.ts
