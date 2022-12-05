@@ -11,7 +11,7 @@ Do you want to stay focused on your programming instead of those distracting act
 If yes, you are in luck!
 This extension launches Flutter documentation from within your favorite Visual Studio Code editor.
 ## Demo
-![](./examples/banner.gif)
+![View Documentation](./examples/insider.gif)
 
 
 
