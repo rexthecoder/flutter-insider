@@ -1,13 +1,17 @@
 # Flutter Insider README
-[![NPM version](https://img.shields.io/npm/v/add-banner.svg?style=flat)](https://www.npmjs.com/package/add-banner) [![Version](https://vsmarketplacebadge.apphb.com/version-short/lanly-dev.letmeplaythemusic.svg)](https://marketplace.visualstudio.com/items?itemName=rexthedev.flutter-insider) \
-Tired or get annoyed from switching windows in order  to read Flutter documentation?
-Doesn't want to or lazy to install the extra software on your system?
-Want to stay focus on your programing instead of those distracting actions and feelings above?
+[![NPM version](https://img.shields.io/npm/v/add-banner.svg?style=flat)](https://www.npmjs.com/package/add-banner) [![Version](https://vsmarketplacebadge.apphb.com/version-short/lanly-dev.letmeplaythemusic.svg)](https://marketplace.visualstudio.com/items?itemName=rexthedev.flutter-insider) 
+ [![Twitter](https://img.shields.io/twitter/follow/rexthecoder?style=social)](https://twitter.com/rexthecoder)
+
+Tired or get annoyed from switching windows to read Flutter documentation?
+
+Don't want to or lazy to install the extra software on your system?
+
+Do you want to stay focused on your programming instead of those distracting actions and feelings above?
 
 If yes, you are in luck!
 This extension launches Flutter documentation from within your favorite Visual Studio Code editor.
 ## Demo
-![](./examples/insider.gif)
+![](./examples/banner.gif)
 
 
 
@@ -15,30 +19,45 @@ This extension launches Flutter documentation from within your favorite Visual S
 
 To use, press `F1` then type `Flutter-Insider: start` then press `Enter`, select the desired item from the drop-down list.
 
-## Features
+# Features  📝
 
-Supports flutter.io, pub.dev, bloc.dev and api.flutter
+## View Documentation
+Flutter Insider allow you to view selected website direclty from vscode.
+> Supports website flutter.io, pub.dev, bloc.dev and api.flutter
 
-## Known Issues
-- Don't support embaded videos due to Vs code webview issue
+The demo below shows you how to achieve such behaviour.
 
-## Release Notes
+![View Documentation](./examples/insider.gif)
 
-### 1.1.1
-- Added Flutter Fire
-- Fixed a few bugs
-### 1.1.0
-- Better Readme
-### 1.0.2
-- Fix the display name
+Steps: Press `F1` then type `Flutter-Insider: start` then press `Enter`, select the desired item from the drop-down list.
+
+## Search Widget Doc
+Flutter insider can search about a given widget by just highlighting the widget. 
+> Note that, if the widget has not been documentated yet, it will notify you that
+> widget not available
+
+![View Documentation](./examples/search.gif)
+
+### How to Perform such action 📍
+
+**Step 1** Highlight code or place cursor on the line you want to document
+**Step 2** Click on the `Flutter-Insider: search` button (or Press `cmd+.` on mac and `ctrl+.` on win and linux)
+
+## Known Issues 🧪
+
+No known issues so far.
 
 
-### 1.0.1
-- Fix Demo gif preview
+## Contributing ⚙️
+
+*   Fix a bug
+*   Write and improve some **documentation**. Documentation is very critical to us. We would appreciate help in adding multiple languages to our docs.
+*   If you are a developer, feel free to check out the source and submit pull requests.
+*   Dig into CONTRIBUTING.MD, which covers submitting bugs, requesting new features, preparing your code for a pull request, etc.
+*   Please don't forget to **like**, **follow**, and **star our repo**!
 
 
 
-### 1.0.0
-- Initial release of Flutter Insider
+### Show some ❤️ and star the repo
 
 **Enjoy!**

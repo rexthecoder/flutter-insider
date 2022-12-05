@@ -2,7 +2,7 @@
     "name": "flutter-insider",
     "displayName": "Flutter Insider",
     "description": "Get Flutter documentation and more inside your vs code",
-    "version": "1.1.1",
+    "version": "2.0.0",
     "publisher": "rexthedev",
     "author": {
         "name": "Rexford Asamoah"
@@ -28,15 +28,16 @@
         "documentation"
     ],
     "engines": {
-        "vscode": "^1.25.0"
+        "vscode": "^1.73.0"
     },
     "categories": [
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.openInsider"
+        "onCommand:extension.openInsider",
+        "onCommand:extension.search"
     ],
-    "main": "./extension",
+    "main": "./src/extension.js",
     "contributes": {
         "configuration": {
             "type": "object",
@@ -58,6 +59,32 @@
                         "Flutter Docs": "https://flutter.dev/docs"
                     },
                     "description": "List of dos and related files."
+                },
+                "Insider.hotkey.mac": {
+                    "type": "string",
+                    "default": "⌘ + .",
+                    "enum": [
+                        "⌘ + .",
+                        "⌥ + ."
+                    ],
+                    "enumDescriptions": [
+                        "Command + .",
+                        "Option + ."
+                    ],
+                    "description": "The hotkey used for searching documentation (only for Macs)"
+                },
+                "Insider.hotkey.windows": {
+                    "type": "string",
+                    "default": "Ctrl + .",
+                    "enum": [
+                        "Ctrl + .",
+                        "Alt + ."
+                    ],
+                    "enumDescriptions": [
+                        "Control + .",
+                        "Alt + ."
+                    ],
+                    "description": "The hotkey used for searching documentation (only for Windows/Linux)"
                 }
             }
         },
@@ -65,17 +92,73 @@
             {
                 "command": "extension.openInsider",
                 "title": "Flutter Insider: start"
+            },
+            {
+                "command": "extension.search",
+                "title": "Flutter Insider: search "
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.search",
+                "key": "cmd+.",
+                "mac": "cmd+.",
+                "when": "isMac && editorTextFocus && editorLangId =~ /dart/ && config.Insider.hotkey.mac == '⌘ + .'"
+            },
+            {
+                "command": "extension.search",
+                "key": "alt+.",
+                "mac": "alt+.",
+                "when": "isMac && editorTextFocus && editorLangId =~ /dart/ && config.Insider.hotkey.mac == '⌥ + .'"
+            },
+            {
+                "command": "extension.search",
+                "key": "ctrl+.",
+                "mac": "ctrl+.",
+                "when": "isLinux && editorTextFocus && editorLangId =~ /dart/ && config.Insider.hotkey.window == 'Ctrl + .'"
+            },
+            {
+                "command": "extension.search",
+                "key": "alt+.",
+                "mac": "alt+.",
+                "when": "isLinux && editorTextFocus && editorLangId =~ /dart/ && config.Insider.hotkey.window == 'Alt + .'"
+            },
+            {
+                "command": "extension.search",
+                "key": "ctrl+.",
+                "win": "ctrl+.",
+                "when": "isWindows && editorTextFocus && editorLangId =~ /dart/ && config.Insider.hotkey.windows == 'Ctrl + .'"
+            },
+            {
+                "command": "extension.search",
+                "key": "alt+.",
+                "win": "alt+.",
+                "when": "isWindows && editorTextFocus && editorLangId =~ /dart/ && config.Insider.hotkey.windows == 'Alt + .'"
             }
         ]
     },
     "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
+        "vscode:prepublish": "npm run esbuild-base -- --minify",
+        "esbuild-base": "esbuild ./src/extension.js --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+        "esbuild": "npm run esbuild-base -- --sourcemap",
+        "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+        "test-compile": "tsc -p ./"
     },
     "devDependencies": {
-        "vscode": "^1.1.33"
+        "@types/glob": "^8.0.0",
+        "@types/mocha": "^10.0.1",
+        "@types/node": "16.x",
+        "@types/vscode": "^1.73.0",
+        "@vscode/test-electron": "^2.2.0",
+        "esbuild": "^0.15.18",
+        "eslint": "^8.28.0",
+        "glob": "^8.0.3",
+        "mocha": "^10.1.0",
+        "typescript": "^4.9.3"
     },
     "dependencies": {
-        "vsce": "^1.84.0"
+        "cheerio": "^1.0.0-rc.12",
+        "node-fetch": "^3.3.0",
+        "node-fetch-commonjs": "^3.2.4"
     }
 }
