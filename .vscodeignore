@@ -6,12 +6,9 @@ jsconfig.json
 vsc-extension-quickstart.md
 .eslintrc.json
 package-lock.json
-out/**
 node_modules/**
-src/**
 .gitignore
 **/tsconfig.json
 **/.eslintrc.json
 **/*.map
-**/*.js
 **/*.ts

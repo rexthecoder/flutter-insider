@@ -2,7 +2,7 @@
     "name": "flutter-insider",
     "displayName": "Flutter Insider",
     "description": "Get Flutter documentation and more inside your vs code",
-    "version": "2.3.0",
+    "version": "2.2.0",
     "publisher": "rexthedev",
     "author": {
         "name": "Rexford Asamoah"
@@ -37,7 +37,7 @@
         "onCommand:extension.openInsider",
         "onCommand:extension.search"
     ],
-    "main": "./out/main.js",
+    "main": "./src/extension.js",
     "contributes": {
         "configuration": {
             "type": "object",
